@@ -39,6 +39,7 @@ jobs:
     - name: Install Mac workload
       working-directory: ./
       run: dotnet workload install macos && dotnet workload restore
+      if: matrix.os == 'macos-13'
     - name: Switch XCode
       run: sudo xcode-select -switch /Applications/Xcode_15.1.app/Contents/Developer
       if: matrix.os == 'macos-13'
